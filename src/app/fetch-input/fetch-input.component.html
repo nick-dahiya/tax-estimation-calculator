@@ -1,5 +1,16 @@
 <div>
-  <label>Superannuation​ percentage:
-    <input [(ngModel)]="hero.name" placeholder="name">
+  <label>Superannuation​:
+    <input [(ngModel)]="userinput.superannuation" placeholder="Superannuation in %">
   </label>
+</div>
+<div>
+  Please choose:
+  <input type="radio" value="true" name="isgrosswithsuper" [(ngModel)]="userinput.isgrosswithsuper" >Gross income
+  <input type="radio" value="false" name="isgrosswithsuper" [(ngModel)]="userinput.isgrosswithsuper" > Gross income with superannuation
+</div>
+<div *ngIf="!userinput.isgrosswithsuper">
+    <input [(ngModel)]="userinput.grossincome" placeholder="Gross income">
+</div>
+<div *ngIf="userinput.isgrosswithsuper">
+    <input [(ngModel)]="userinput.grosswithsuper" placeholder="Gross income with superannuation">
 </div>
